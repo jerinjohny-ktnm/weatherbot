@@ -9,7 +9,7 @@ error_reporting(0);
 set_time_limit(0);
 
 flush();
-$API_KEY = $HEROKU_ENV['BOT_TOKEN'];; //Your token
+$API_KEY = $HEROKU_ENV['BOT_TOKEN'];
 ##------------------------------##
 define('API_KEY',$API_KEY);
 function bot($method,$datas=[]){
@@ -41,6 +41,7 @@ $chat_id = $message->chat->id;
 $name = $from_id = $message->from->first_name;
 $from_id = $message->from->id;
 $text = $message->text;
+$API_KEY = $HEROKU_ENV['API_KEY']
 $START_MESSAGE = $HEROKU_ENV['START_MESSAGE'];
 $username = $update->message->from->username;
 if($text == '/start')
@@ -54,7 +55,7 @@ Use `/weather city` to get the weather info.",
 if(strpos($text,"/weather") !== false){ 
 $location = trim(str_replace("/weather","",$text)); 
 
-$resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=89ef8a05b6c964f4cab9e2f97f696c81"),true);
+$resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$API_KEY"),true);
 $weather = $resp['weather'][0]['main'];
 $description = $resp['weather'][0]['description'];
 $temp = $resp['main']['temp'];
