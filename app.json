@@ -14,10 +14,14 @@
             "description": "your Telegram Bot Token, from @BotFather"
         },
         "API_KEY": {
-            "description": "A start message for your bot. Add /get command"
+            "description": "Get your api key from openweathermap.org"
         },
 "START_MESSAGE": {
    "description": "START MESSAGE FOR YOUR BOT.",
+   "required": false
+  },
+"HELP_MESSAGE": {
+   "description": "Fill this if you need a Help menu.",
    "required": false
   }
     },
