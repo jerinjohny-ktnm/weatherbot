@@ -9,7 +9,7 @@ error_reporting(0);
 set_time_limit(0);
 
 flush();
-$API_KEY = 'Your bot token'; //Your token
+$API_KEY = $HEROKU_ENV['BOT_TOKEN'];; //Your token
 ##------------------------------##
 define('API_KEY',$API_KEY);
 function bot($method,$datas=[]){
@@ -41,15 +41,14 @@ $chat_id = $message->chat->id;
 $name = $from_id = $message->from->first_name;
 $from_id = $message->from->id;
 $text = $message->text;
-$fromid = $update->callback_query->from->id;
+$START_MESSAGE = $HEROKU_ENV['START_MESSAGE'];
 $username = $update->message->from->username;
-$chatid = $update->callback_query->message->chat->id;
 if($text == '/start')
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"***$START_MESSAGE
+                'text' =>"***$START_MESSAGE***
 
-Use /joke to get jokes.***",
+Use `/weather city` to get the weather info.",
 'parse_mode'=>"MarkDown",
 ]);
 if(strpos($text,"/weather") !== false){ 
