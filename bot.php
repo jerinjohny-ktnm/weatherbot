@@ -55,7 +55,7 @@ Use `/weather city` to get the weather info.",
 if(strpos($text,"/weather") !== false){ 
 $location = trim(str_replace("/weather","",$text)); 
 
-$resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$API_KEY"),true);
+$resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$API_TOKEN"),true);
 $weather = $resp['weather'][0]['main'];
 $description = $resp['weather'][0]['description'];
 $temp = $resp['main']['temp'];
