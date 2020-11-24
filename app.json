@@ -1,13 +1,13 @@
 {
-    "name": "Quote Bot",
-    "description": "A simple bot to fetch Quotes from GoodReads.",
+    "name": "Weather Bot",
+    "description": "A telegram bot to fetch weather info.",
     "keywords": [
-        "Quotes",
+        "Weather",
         "Bot",
-        "Reading"
+        "Telegram"
     ],
     "logo": "https://telegra.ph/file/1794c81b97fc30dcefeb2.png",
-    "repository": "https://github.com/Benchamxd/Quote-bot",
+    "repository": "https://github.com/Benchamxd/Weatherbot",
     "success_url": "/",
     "env": {
         "BOT_TOKEN": {
