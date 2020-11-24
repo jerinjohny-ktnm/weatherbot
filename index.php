@@ -54,12 +54,6 @@ Send me a city name to find the weather.***",
 'parse_mode'=>"MarkDown",
 ]);
 
-if($text == '/help')
-bot('sendmessage', [
-                'chat_id' =>$chat_id,
-                'text' =>"$HELP_MESSAGE",
-'parse_mode'=>"MarkDown",
-]);
 //=========================BENCHAMXD=================//
 if($text !== '/start'){
 $resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$text&appid=$API_TOKEN"),true);
