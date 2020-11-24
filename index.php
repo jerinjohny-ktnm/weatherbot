@@ -41,6 +41,7 @@ $chat_id = $message->chat->id;
 $name = $from_id = $message->from->first_name;
 $from_id = $message->from->id;
 $text = $message->text;
+$HELP_MESSAGE = $_ENV['HELP_MESSAGE'];
 $API_TOKEN = $_ENV['API_TOKEN'];
 $START_MESSAGE = $_ENV['START_MESSAGE'];
 $username = $update->message->from->username;
@@ -53,6 +54,12 @@ Send me a city name to find the weather.***",
 'parse_mode'=>"MarkDown",
 ]);
 
+if($text == '/help')
+bot('sendmessage', [
+                'chat_id' =>$chat_id,
+                'text' =>"$HELP_MESSAGE",
+'parse_mode'=>"MarkDown",
+]);
 //=========================BENCHAMXD=================//
 if($text !== '/start'){
 $resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$text&appid=$API_TOKEN"),true);
