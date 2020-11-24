@@ -47,9 +47,9 @@ $username = $update->message->from->username;
 if($text == '/start')
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"***$START_MESSAGE***
+                'text' =>"***$START_MESSAGE
 
-Send me a city name to find the weather.",
+Send me a city name to find the weather.***",
 'parse_mode'=>"MarkDown",
 ]);
 
@@ -69,15 +69,15 @@ $feels = $feels_like - $kelvin;
  if($weather['name']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"Weather at $text is $weather
+                'text' =>"Weather at $text is `$weather`
                 
-Temp : $celcius °C
+Temp : `$celcius °C`
 
-Feels Like : $feels °C
+Feels Like : `$feels °C`
 
-Humidity: $humidity
+Humidity: `$humidity`
 
-Country: $country",
+Country: `$country`",
 'parse_mode'=>"MarkDown",
 
 ]);
