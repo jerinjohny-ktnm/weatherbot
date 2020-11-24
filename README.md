@@ -4,7 +4,7 @@
 https://heroku.com/deploy?template=https://github.com/Benchamxd/weatherbot/tree/main
 
 
-``if(strpos($text,"/weather") !== false){ 
+if(strpos($text,"/weather") !== false){ 
 $location = trim(str_replace("/weather","",$text)); 
 
 $resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$API_TOKEN"),true);
@@ -45,4 +45,4 @@ bot('sendmessage', [
                 
 ]);
 }
-} ``
+}
