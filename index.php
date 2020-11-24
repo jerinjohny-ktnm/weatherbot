@@ -42,6 +42,7 @@ $name = $from_id = $message->from->first_name;
 $from_id = $message->from->id;
 $text = $message->text;
 $API_TOKEN = $_ENV['API_TOKEN'];
+$START_MESSAGE = $_ENV['START_MESSAGE'];
 $username = $update->message->from->username;
 if($text == '/start')
 bot('sendmessage', [
