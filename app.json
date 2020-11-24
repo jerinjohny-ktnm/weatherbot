@@ -15,7 +15,11 @@
         },
         "API_KEY": {
             "description": "A start message for your bot. Add /get command"
-        }
+        },
+"START_MESSAGE": {
+   "description": "START MESSAGE FOR YOUR BOT.",
+   "required": false
+  }
     },
     "formation": {
         "web": {
