@@ -49,7 +49,7 @@ bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"***$START_MESSAGE***
 
-Use `/weather city` to get the weather info.",
+Send me a city name to find the weather.",
 'parse_mode'=>"MarkDown",
 ]);
 
@@ -69,10 +69,8 @@ $feels = $feels_like - $kelvin;
  if($weather['name']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"Weather at $location: $weather
+                'text' =>"Weather at $text is $weather
                 
-$description
-
 Temp : $celcius °C
 
 Feels Like : $feels °C
