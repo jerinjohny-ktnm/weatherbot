@@ -54,9 +54,7 @@ Use `/weather city` to get the weather info.",
 ]);
 
 //=========================BENCHAMXD=================//
-if(strpos($text,"/weather") !== false){ 
-$location = trim(str_replace("/weather","",$text)); 
-
+if($text !== '/start'){
 $resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$API_TOKEN"),true);
 $weather = $resp['weather'][0]['main'];
 $description = $resp['weather'][0]['description'];
@@ -71,9 +69,9 @@ $feels = $feels_like - $kelvin;
  if($weather['name']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"***Weather at $location: $weather
+                'text' =>"Weather at $location: $weather
                 
-Status: $description
+$description
 
 Temp : $celcius °C
 
@@ -81,9 +79,7 @@ Feels Like : $feels °C
 
 Humidity: $humidity
 
-Country: $country 
-
-Checked By @$username***",
+Country: $country",
 'parse_mode'=>"MarkDown",
 
 ]);
@@ -91,9 +87,8 @@ Checked By @$username***",
 else {
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"INVALID CITY❌",
+                'text' =>"Sorry, i couldn't find that city or the city dosen't exist.",
                 
 ]);
 }
 }
-
