@@ -13,7 +13,7 @@
         "BOT_TOKEN": {
             "description": "your Telegram Bot Token, from @BotFather"
         },
-        "API_TOKEN": {
+        "API_KEY": {
             "description": "A start message for your bot. Add /get command"
         }
     },
