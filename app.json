@@ -19,10 +19,6 @@
 "START_MESSAGE": {
    "description": "START MESSAGE FOR YOUR BOT.",
    "required": false
-  },
-"HELP_MESSAGE": {
-   "description": "Fill this if you need a Help menu.",
-   "required": false
   }
     },
     "formation": {
