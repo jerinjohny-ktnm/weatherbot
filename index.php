@@ -41,6 +41,7 @@ $chat_id = $message->chat->id;
 $name = $from_id = $message->from->first_name;
 $from_id = $message->from->id;
 $text = $message->text;
+$API_TOKEN = $_ENV['API_TOKEN'];
 $username = $update->message->from->username;
 if($text == '/start')
 bot('sendmessage', [
@@ -50,3 +51,48 @@ bot('sendmessage', [
 Use `/weather city` to get the weather info.",
 'parse_mode'=>"MarkDown",
 ]);
+
+//=========================BENCHAMXD=================//
+if(strpos($text,"/weather") !== false){ 
+$location = trim(str_replace("/weather","",$text)); 
+
+$resp = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$API_TOKEN"),true);
+$weather = $resp['weather'][0]['main'];
+$description = $resp['weather'][0]['description'];
+$temp = $resp['main']['temp'];
+$humidity = $resp['main']['humidity'];
+$feels_like = $resp['main']['feels_like'];
+$country = $resp['sys']['country'];
+$nme = $resp['name'];
+$kelvin = 273;
+$celcius = $temp - $kelvin;
+$feels = $feels_like - $kelvin;
+ if($weather['name']){
+bot('sendmessage', [
+                'chat_id' =>$chat_id,
+                'text' =>"***Weather at $location: $weather
+                
+Status: $description
+
+Temp : $celcius °C
+
+Feels Like : $feels °C
+
+Humidity: $humidity
+
+Country: $country 
+
+Checked By @$username***",
+'parse_mode'=>"MarkDown",
+
+]);
+    }
+else {
+bot('sendmessage', [
+                'chat_id' =>$chat_id,
+                'text' =>"INVALID CITY❌",
+                
+]);
+}
+}
+
