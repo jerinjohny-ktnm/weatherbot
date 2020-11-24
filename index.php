@@ -72,13 +72,13 @@ bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"Weather at ***$text*** is `$weather`
                 
-Temp : `$celcius °C`
+🌡 Temp : `$celcius °C`
 
-Feels Like : `$feels °C`
+🧖‍♂ Feels Like : `$feels °C`
 
-Humidity: `$humidity`
+⛅️ Humidity: `$humidity`
 
-Country: `$country`",
+🌏 Country: `$country`",
 'parse_mode'=>"MarkDown",
 
 ]);
