@@ -85,7 +85,8 @@ Country: `$country`",
 else {
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"Sorry, i couldn't find that city or the city dosen't exist.",
+                'text' =>"`Sorry, i couldn't find that city or the city dosen't exist.`",
+'parse_mode'=>"MarkDown",
                 
 ]);
 }
