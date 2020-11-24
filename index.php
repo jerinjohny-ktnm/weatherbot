@@ -69,7 +69,7 @@ $feels = $feels_like - $kelvin;
  if($weather['name']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"Weather at $text is `$weather`
+                'text' =>"Weather at ***$text*** is `$weather`
                 
 Temp : `$celcius °C`
 
