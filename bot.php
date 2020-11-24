@@ -41,7 +41,7 @@ $chat_id = $message->chat->id;
 $name = $from_id = $message->from->first_name;
 $from_id = $message->from->id;
 $text = $message->text;
-$API_KEY = $HEROKU_ENV['API_KEY']
+$API_KEY = $HEROKU_ENV['API_KEY'];
 $START_MESSAGE = $HEROKU_ENV['START_MESSAGE'];
 $username = $update->message->from->username;
 if($text == '/start')
